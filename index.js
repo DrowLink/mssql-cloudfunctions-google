@@ -4,11 +4,11 @@ const mssql = require("mssql");
 const config = {
   user: 'username',
   password: 'password',
-  server: 'server',
+  server: 'ipserver',
   database: 'database_name',
   port: port,
   options: {
-    encrypt: false // Usar esto si estás en Windows Azure
+    encrypt: false // Use only on windows Azure connections
   }
 };
 
@@ -42,10 +42,10 @@ async function runQuery() {
 //const queryString = `SELECT * FROM vw_account_statment WHERE cardcode = '1801'`;
   const results = await querySqlServer(queryString);
   if (results) {
-    console.log("Filas retornadas:", results.length);
+    console.log("Returned rows:", results.length);
     // Puedes procesar los resultados aquí
   } else {
-    console.log("No se pudieron obtener los resultados de la consulta");
+    console.log("Queries results cannot be accesible");
   }
 }
 
